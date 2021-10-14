@@ -1,8 +1,8 @@
 {
   "name": "betkub-report-queue",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "betkub-report-queue",
+  "author": "iamlookod",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
