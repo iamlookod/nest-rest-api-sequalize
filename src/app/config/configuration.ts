@@ -12,7 +12,7 @@ export interface IConfig {
 }
 
 export default (): IConfig => ({
-  env: process.env.NODE_ENV || 'developement',
+  env: process.env.NODE_ENV || 'development',
   port: parseInt(process.env.PORT, 10) || 3000,
   jwtSecret: process.env.JWT_SECRET || '',
   serviceName: process.env.SERVICE_NAME || '',

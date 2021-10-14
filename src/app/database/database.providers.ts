@@ -1,6 +1,7 @@
 import { Sequelize } from 'sequelize-typescript';
 import * as path from 'path';
 import configuration from '../config/configuration';
+import { Logger, LoggerOptions } from '../logger/logger.service';
 
 export const databaseProviders = [
   {
@@ -18,11 +19,13 @@ export const databaseProviders = [
         },
       });
 
+      const logger = new Logger('Database', LoggerOptions);
+
       sequelize
         .authenticate()
-        .then(() => console.log('Database conneted'))
+        .then(() => logger.log('Database conneted'))
         .catch((err) => {
-          console.log('Database cannot connect', JSON.stringify(err));
+          logger.error('Database cannot connect', JSON.stringify(err));
         });
 
       return sequelize;
